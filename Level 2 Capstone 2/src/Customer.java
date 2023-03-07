@@ -7,7 +7,8 @@ public class Customer {
 	String cLocation;
 	String cEmailAdd;
 	// Methods
-	public Customer(String cName, String cContactNumber, String cAddress, String cLocation, String cEmailAdd) {
+	public Customer(String cName, String cContactNumber, String cAddress, 
+							String cLocation, String cEmailAdd) {
 		this.cName = cName;
 		this.cContactNumber = cContactNumber;
 		this.cAddress = cAddress;

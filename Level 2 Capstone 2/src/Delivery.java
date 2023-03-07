@@ -90,7 +90,8 @@ public class Delivery {
 		scanner.close();
 		System.out.println("Your order has been recieved and your reciept has been generated");
 		//New Customer, Restaurant and Driver Creation
-		Customer newCustomerObj = new Customer(inputCName, inputCNum, inputCAdd, inputCLoc, inputCE);
+		Customer newCustomerObj = new Customer(inputCName, inputCNum, inputCAdd, inputCLoc, 
+							inputCE);
 		Restaurant newRestaurantObj = new Restaurant(inputRName, inputRNum, inputRLoc);
 		Drivers newDriverObj = new Drivers();
 		
@@ -99,10 +100,11 @@ public class Delivery {
 	}
 	@SuppressWarnings("static-access")
 	
-	//Reciept printer class
+	//Receipt printer class
 	public static void printReciept(Customer customer, Restaurant restaurant, Drivers driver) {
 		if (customer.cLocation.equals(driver.dLocation.trim())) {
-			//Writes customer information, restaurant information and driver information to the "reciept.txt" document
+			//Writes customer information, restaurant information and driver information to
+			//the "reciept.txt" document
 			try {
 				FileWriter recieptWriter = new FileWriter("reciept.txt");
 				recieptWriter.write("Order number 1234");
@@ -110,8 +112,10 @@ public class Delivery {
 				recieptWriter.write("\nEmail: " + customer.cEmailAdd);
 				recieptWriter.write("Phone Number: " + customer.cContactNumber);
 				recieptWriter.write("\nLocation: " + customer.cLocation);
-				recieptWriter.write("\n\nYou have ordered the following from " +restaurant.rName + " in " + restaurant.rLocation + ": \n");
-				//for loop loops through map to find all corresponding objects and groups them in the final text document
+				recieptWriter.write("\n\nYou have ordered the following from " +restaurant.rName + " in "
+									+ restaurant.rLocation + ": \n");
+				//for loop loops through map to find all corresponding objects and groups 
+				//them in the final text document
 				for (String item : itemQuantityMap.keySet()) {
 				    int quantity = itemQuantityMap.get(item);
 				    if (item.equals("1")) {
@@ -136,17 +140,20 @@ public class Delivery {
 				}
 				recieptWriter.write("\n\nSpecial instructions: " + instructions);
 				recieptWriter.write("\n\nTotal: R" + totalCost);
-				recieptWriter.write("\n\n" + driver.dName + " is nearest to the restaurant and so they will be delivering your");
+				recieptWriter.write("\n\n" + driver.dName 
+										+ " is nearest to the restaurant and so they will be delivering your");
 				recieptWriter.write("\norder to you at:\n");
 				recieptWriter.write("\n" + customer.cAddress);
 				recieptWriter.write("\n" + customer.cLocation);
-				recieptWriter.write("\n\nIf you need to contact the restaurant, their number is " + restaurant.rContactNumber);
+				recieptWriter.write("\n\nIf you need to contact the restaurant, their number is "
+									+ restaurant.rContactNumber);
 				recieptWriter.close();
 			} catch(IOException e) {
 				System.out.println("Could not write to 'reciept.txt'");
 			}
 		} else {
-			System.out.println("Sorry! Our drivers are too far away from you to be able to deliver to your location.");
+			System.out.println("Sorry! Our drivers are too far away from you" 
+								+ " to be able to deliver to your location.");
 		}
 	}
 }

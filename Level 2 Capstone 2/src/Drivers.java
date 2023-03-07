@@ -12,7 +12,8 @@ public class Drivers {
         File driverText = new File("drivers.txt");
         Scanner driverTextSc = null;
         int smallestLoad = Integer.MAX_VALUE;
-      //find all drivers with the same location as the restaurant before finding the driver with the lowest load
+      //find all drivers with the same location as the restaurant before finding
+      //the driver with the lowest load
         try {
             driverTextSc = new Scanner(driverText);
             while (driverTextSc.hasNext()) {
