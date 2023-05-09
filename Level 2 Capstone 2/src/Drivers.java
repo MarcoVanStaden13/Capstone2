@@ -9,7 +9,7 @@ public class Drivers {
     static String dLocation;
     static String dLoad;
     public static void driver(String loc) {
-        File driverText = new File("driver-info.txt");
+        File driverText = new File("drivers.txt");
         Scanner driverTextSc = null;
         int smallestLoad = Integer.MAX_VALUE;
       //find all drivers with the same location as the restaurant before finding
@@ -31,7 +31,7 @@ public class Drivers {
             }
             driverTextSc.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Error reading driver-info.txt");
+            System.out.println("Error reading drivers.txt");
         }
     }
 }
