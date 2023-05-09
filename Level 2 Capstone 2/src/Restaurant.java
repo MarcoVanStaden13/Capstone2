@@ -2,17 +2,20 @@
 public class Restaurant {
 	
 	//Attributes
-	String resName;
-	String resContactNumber;
-	static String resLocation;
+	String resName;	//The name of the restaurant
+	String resContactNumber;	//The contact number of the restaurant
+	static String resLocation;	//The location of the restaurant
 	
-	// Methods
+	// This is the constructor method for the Restaurant class.
+	// Initializes the instance variables with the values provided as arguments.
 	@SuppressWarnings("static-access")
 	public Restaurant(String resName, String resContactNumber, String resLocation) {
 		this.resName = resName;
 		this.resContactNumber = resContactNumber;
 		this.resLocation = resLocation;
 	}
+	
+	//toString method returns a String representation of the restaurant object.
 	   public String toString() {
 	      String output = "Name: " + resName;
 	      output += "\nContact Details: " + resContactNumber;
