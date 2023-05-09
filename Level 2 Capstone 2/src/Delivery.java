@@ -17,6 +17,7 @@ public class Delivery {
 		//Scanner objects retrieve data from user to be placed into all objects
 		Scanner scanner = new Scanner(System.in);
 		
+		// Gets the customer details from user
 		System.out.println("Enter your name: ");
 		String inputCName = scanner.nextLine();
 		
@@ -32,6 +33,7 @@ public class Delivery {
 		System.out.println("Enter your E-mail: ");
 		String inputCE= scanner.nextLine();
 		
+		// Gets the restaurant details from user
 		System.out.println("Enter the restaurant name: ");
 		String inputRName= scanner.nextLine();
 		
@@ -52,6 +54,7 @@ public class Delivery {
 		System.out.println("7. Milk Shake - R35.00");
 		System.out.println("8. IceCream - R35.50");
 		System.out.println("9. Water - R8.00");
+		
 		//Prompts customer for the order detains such as which items and any special requests
 		System.out.println("Enter your order (separated by spaces):");
 		String order = scanner.nextLine();
@@ -59,9 +62,11 @@ public class Delivery {
 		// Splits the order input and count the quantity of each item
 		String[] items = order.split(" ");
 		for (String item : items) {
-		    int quantity = itemQuantityMap.getOrDefault(item, 0) + 1;
-		    itemQuantityMap.put(item, quantity);
+		    int quantity = itemQuantityMap.getOrDefault(item, 0) + 1;// Gets the current quantity of the item, or 0 if it's not in the map, and increments it
+		    itemQuantityMap.put(item, quantity); // Updates the map with the new quantity
 		}
+		
+		// Calculates the total cost of the order
 		 totalCost = 0.0;
 		String[] costs = order.split(" ");
 		for (String item : costs) {
@@ -85,10 +90,12 @@ public class Delivery {
 		        totalCost += 8.00;
 		    }
 		}
+		// Display the total cost
 		System.out.println("Enter any special preparation instructions?:");
 		instructions = scanner.nextLine();
 		scanner.close();
 		System.out.println("Your order has been recieved and your reciept has been generated");
+		
 		//New Customer, Restaurant and Driver Creation
 		Customer newCustomerObj = new Customer(inputCName, inputCNum, inputCAdd, inputCLoc, 
 							inputCE);
@@ -138,6 +145,9 @@ public class Delivery {
 				    	recieptWriter.write("\n" + quantity + " x Water (R8.00)");
 				    }
 				}
+				
+				// Writes the special instructions, total cost, driver name and location, customer address and location,
+				// and restaurant contact number to the receipt file
 				recieptWriter.write("\n\nSpecial instructions: " + instructions);
 				recieptWriter.write("\n\nTotal: R" + totalCost);
 				recieptWriter.write("\n\n" + driver.drivName 
@@ -147,11 +157,15 @@ public class Delivery {
 				recieptWriter.write("\n" + customer.cusLocation);
 				recieptWriter.write("\n\nIf you need to contact the restaurant, their number is "
 									+ restaurant.resContactNumber);
+				
+				// Closes the receipt file writer
 				recieptWriter.close();
 			} catch(IOException e) {
+				 // Prints an error message if there was an issue writing to the receipt file
 				System.out.println("Could not write to 'reciept.txt'");
 			}
 		} else {
+			// Prints a message indicating that there are no drivers available to deliver to the customer's location
 			System.out.println("Sorry! Our drivers are too far away from you" 
 								+ " to be able to deliver to your location.");
 		}
