@@ -1,26 +1,26 @@
 //Customer class for customer object creation
 public class Customer {
 	//Attributes
-	String cName;
-	String cContactNumber;
-	String cAddress;
-	String cLocation;
-	String cEmailAdd;
+	String cusName;
+	String cusContactNumber;
+	String cusAddress;
+	String cusLocation;
+	String cusEmailAdd;
 	// Methods
-	public Customer(String cName, String cContactNumber, String cAddress, 
-							String cLocation, String cEmailAdd) {
-		this.cName = cName;
-		this.cContactNumber = cContactNumber;
-		this.cAddress = cAddress;
-		this.cLocation = cLocation;
-		this.cEmailAdd = cEmailAdd;
+	public Customer(String cusName, String cusContactNumber, String cusAddress, 
+							String cusLocation, String cusEmailAdd) {
+		this.cusName = cusName;
+		this.cusContactNumber = cusContactNumber;
+		this.cusAddress = cusAddress;
+		this.cusLocation = cusLocation;
+		this.cusEmailAdd = cusEmailAdd;
 	}
 	public String toString() {
-		  String output = "Name: " + cName;
-		  output += "\nContact Number: " + cContactNumber;
-		  output += "\nAddress: " + cAddress;
-		  output += "\nCity: " + cLocation;
-		  output +="\nEmail-Address: " + cEmailAdd;
+		  String output = "Name: " + cusName;
+		  output += "\nContact Number: " + cusContactNumber;
+		  output += "\nAddress: " + cusAddress;
+		  output += "\nCity: " + cusLocation;
+		  output +="\nEmail-Address: " + cusEmailAdd;
 		  return output;
 	}
 }

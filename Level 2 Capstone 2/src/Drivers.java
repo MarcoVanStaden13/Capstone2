@@ -5,9 +5,9 @@ import java.util.Scanner;
 //Drivers class for driver object creation
 public class Drivers {
 
-    static String dName;
-    static String dLocation;
-    static String dLoad;
+    static String drivName;
+    static String drivLocation;
+    static String drivLoad;
     public static void driver(String loc) {
         File driverText = new File("driver-info.txt");
         Scanner driverTextSc = null;
@@ -23,9 +23,9 @@ public class Drivers {
                     int load = Integer.parseInt(splitLine[2].trim());
                     if (load < smallestLoad) {
                         smallestLoad = load;
-                        dName = splitLine[0];
-                        dLocation = splitLine[1];
-                        dLoad = splitLine[2];
+                        drivName = splitLine[0];
+                        drivLocation = splitLine[1];
+                        drivLoad = splitLine[2];
                     }
                 }
             }
