@@ -2,21 +2,21 @@
 public class Restaurant {
 	
 	//Attributes
-	String rName;
-	String rContactNumber;
-	static String rLocation;
+	String resName;
+	String resContactNumber;
+	static String resLocation;
 	
 	// Methods
 	@SuppressWarnings("static-access")
-	public Restaurant(String rName, String rContactNumber, String rLocation) {
-		this.rName = rName;
-		this.rContactNumber = rContactNumber;
-		this.rLocation = rLocation;
+	public Restaurant(String resName, String resContactNumber, String resLocation) {
+		this.resName = resName;
+		this.resContactNumber = resContactNumber;
+		this.resLocation = resLocation;
 	}
 	   public String toString() {
-	      String output = "Name: " + rName;
-	      output += "\nContact Details: " + rContactNumber;
-	      output +="\nLocation: " + rLocation;
+	      String output = "Name: " + resName;
+	      output += "\nContact Details: " + resContactNumber;
+	      output +="\nLocation: " + resLocation;
 	      return output;
 	   }
 }
